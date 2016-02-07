@@ -310,7 +310,7 @@ add_subdirectory(tests)
 ###############################################################################
 # Unit tests
 enable_testing()
-set(XML_LOG_PATH "" CACHE STRING "Path to unit testing xml results")
+set(XML_LOG_PATH "" CACHE PATH "Path to unit testing xml results")
 if (XML_LOG_PATH STREQUAL "")
     add_test(NAME check_check COMMAND check_check)
 else()
