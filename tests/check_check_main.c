@@ -25,7 +25,7 @@
 #include <check.h>
 #include "check_check.h"
 
-int main (void)
+int main (int argc, char **argv)
 {
   int n;
   SRunner *sr;
@@ -49,6 +49,12 @@ int main (void)
 #endif
 
   srunner_add_suite(sr, make_selective_suite());
+  
+  if (argc > 1) {
+    /* Log result to XML: */
+    printf ("Save results to XML: %s\n", argv[1]);
+    srunner_set_xml(sr, argv[1]);
+  }
   
   printf ("Ran %d tests in subordinate suite\n", sub_ntests);
   srunner_run_all (sr, CK_VERBOSE);
