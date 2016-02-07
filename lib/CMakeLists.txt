@@ -70,4 +70,4 @@ install(TARGETS compat
   LIBRARY DESTINATION lib
   ARCHIVE DESTINATION lib) 
 
-install(FILES ${CMAKE_BINARY_DIR}/lib/libcompat.h DESTINATION include)
+install(FILES ${CMAKE_SOURCE_DIR}/lib/libcompat.h DESTINATION include)
